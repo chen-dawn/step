@@ -15,14 +15,23 @@
 /**
  * Adds a random greeting to the page.
  */
-function addRandomGreeting() {  // eslint-disable-line no-unused-vars
-  const greetings =
-      ['Hello world!', '¡Hola Mundo!', '你好，世界！', 'Bonjour le monde!'];
+// function addRandomGreeting() {  // eslint-disable-line no-unused-vars
+//   const greetings =
+//       ['Hello world!', '¡Hola Mundo!', '你好，世界！', 'Bonjour le monde!'];
 
-  // Pick a random greeting.
-  const greeting = greetings[Math.floor(Math.random() * greetings.length)];
+//   // Pick a random greeting.
+//   const greeting = greetings[Math.floor(Math.random() * greetings.length)];
 
-  // Add it to the page.
-  const greetingContainer = document.getElementById('greeting-container');
-  greetingContainer.innerText = greeting;
+//   // Add it to the page.
+//   const greetingContainer = document.getElementById('greeting-container');
+//   greetingContainer.innerText = greeting;
+// }
+
+function addRandomGreeting() {
+  fetch('/data').then(response => response.text()).then((greetings) => {
+  // const response = await fetch('/data');
+  // fetch('/data').then((response) => response.json()).then((greetings) => {
+  // const hello = await response.text();
+  document.getElementById('greeting-container').innerHTML = greetings;
+  });
 }
