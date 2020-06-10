@@ -14,6 +14,7 @@
 
 package com.google.sps.servlets;
 
+import com.google.sps.servlets.PersonProto.Person;
 import java.io.IOException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -26,6 +27,12 @@ public class DataServlet extends HttpServlet {
   @Override
   public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
     response.setContentType("text/html;");
-    response.getWriter().println("<h1>Hello world!</h1>");
+    Person personProtoExample = Person.newBuilder()
+                                    .setName("Dawn")
+                                    .setEmail("dawn@example.com")
+                                    .setPhoneNumber(12345)
+                                    .setPersonType(Person.PersonType.CUSTOMER)
+                                    .build();
+    response.getWriter().println(personProtoExample.toString());
   }
 }
