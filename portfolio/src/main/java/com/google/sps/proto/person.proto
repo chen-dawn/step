@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package sps.servlets;
+
+option java_package = "com.google.sps.servlets";
+option java_outer_classname = "PersonProto";
+
+message Person {
+  string name = 1;
+  string email = 2;
+  int32 phone_number = 3;
+
+  enum PersonType {
+    PERSON_TYPE_UNSPECIFIED = 0;
+    CUSTOMER = 1;
+    MERCHANT = 2;
+  }
+  PersonType person_type = 4;
+}
