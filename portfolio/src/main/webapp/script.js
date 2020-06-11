@@ -1,4 +1,4 @@
-/*jshint esversion: 6 */
+/* jshint esversion: 6 */
 // Copyright 2019 Google LLC
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,8 +17,8 @@
  * Adds a random greeting to the page.
  */
 function addRandomGreeting() {  // eslint-disable-line no-unused-vars
-  fetch('/data').then(response => response.text()).then((greetings) => {
-  console.log("THIS IS GREETINGS", greetings);
-  document.getElementById('greeting-container').innerHTML = greetings;
+  fetch('/data').then((response) => response.text()).then((greetings) => {
+    console.log('THIS IS GREETINGS', greetings);
+    document.getElementById('greeting-container').innerHTML = greetings;
   });
 }
