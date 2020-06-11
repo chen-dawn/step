@@ -26,12 +26,20 @@
 //   const greetingContainer = document.getElementById('greeting-container');
 //   greetingContainer.innerText = greeting;
 // }
+var personProto = require('./generated/com/google/sps/proto/person_pb');
+var person = new personProto.Person();
 
 function addRandomGreeting() {
   fetch('/data').then(response => response.text()).then((greetings) => {
-  // const response = await fetch('/data');
-  // fetch('/data').then((response) => response.json()).then((greetings) => {
-  // const hello = await response.text();
+    // var person = new personProto.Person().deserializeBinary(greetings);
+  // const person = personProto.Person.deserializeBinary(greetings);
+  const person = personProto.Person(new Uint8Array(greetings));
+  console.log("THIS IS PERSONS", person);
   document.getElementById('greeting-container').innerHTML = greetings;
   });
+}
+
+
+window.onload=function(){
+  document.getElementById("my-button").addEventListener("click", addRandomGreeting);
 }
