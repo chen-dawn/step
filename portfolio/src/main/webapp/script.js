@@ -1,3 +1,4 @@
+/*jshint esversion: 6 */
 // Copyright 2019 Google LLC
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
@@ -15,31 +16,9 @@
 /**
  * Adds a random greeting to the page.
  */
-// function addRandomGreeting() {  // eslint-disable-line no-unused-vars
-//   const greetings =
-//       ['Hello world!', '¡Hola Mundo!', '你好，世界！', 'Bonjour le monde!'];
-
-//   // Pick a random greeting.
-//   const greeting = greetings[Math.floor(Math.random() * greetings.length)];
-
-//   // Add it to the page.
-//   const greetingContainer = document.getElementById('greeting-container');
-//   greetingContainer.innerText = greeting;
-// }
-var personProto = require('./generated/com/google/sps/proto/person_pb');
-var person = new personProto.Person();
-
-function addRandomGreeting() {
+function addRandomGreeting() {  // eslint-disable-line no-unused-vars
   fetch('/data').then(response => response.text()).then((greetings) => {
-    // var person = new personProto.Person().deserializeBinary(greetings);
-  // const person = personProto.Person.deserializeBinary(greetings);
-  const person = personProto.Person(new Uint8Array(greetings));
-  console.log("THIS IS PERSONS", person);
+  console.log("THIS IS GREETINGS", greetings);
   document.getElementById('greeting-container').innerHTML = greetings;
   });
-}
-
-
-window.onload=function(){
-  document.getElementById("my-button").addEventListener("click", addRandomGreeting);
 }

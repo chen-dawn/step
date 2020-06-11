@@ -8,3 +8,8 @@ target/
 
 # Ignore editor config
 .idea
+
+**/.classpath
+**/.project
+**/.settings/**
+**/.factorypath

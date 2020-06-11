@@ -5,14 +5,19 @@ package com.google.sps.servlets;
 
 public final class PersonProto {
   private PersonProto() {}
-  public static void registerAllExtensions(com.google.protobuf.ExtensionRegistryLite registry) {}
+  public static void registerAllExtensions(
+      com.google.protobuf.ExtensionRegistryLite registry) {
+  }
 
-  public static void registerAllExtensions(com.google.protobuf.ExtensionRegistry registry) {
-    registerAllExtensions((com.google.protobuf.ExtensionRegistryLite) registry);
+  public static void registerAllExtensions(
+      com.google.protobuf.ExtensionRegistry registry) {
+    registerAllExtensions(
+        (com.google.protobuf.ExtensionRegistryLite) registry);
   }
   public interface PersonOrBuilder extends
       // @@protoc_insertion_point(interface_extends:sps.servlets.Person)
       com.google.protobuf.MessageOrBuilder {
+
     /**
      * <code>optional string name = 1;</code>
      */
@@ -20,7 +25,8 @@ public final class PersonProto {
     /**
      * <code>optional string name = 1;</code>
      */
-    com.google.protobuf.ByteString getNameBytes();
+    com.google.protobuf.ByteString
+        getNameBytes();
 
     /**
      * <code>optional string email = 2;</code>
@@ -29,7 +35,8 @@ public final class PersonProto {
     /**
      * <code>optional string email = 2;</code>
      */
-    com.google.protobuf.ByteString getEmailBytes();
+    com.google.protobuf.ByteString
+        getEmailBytes();
 
     /**
      * <code>optional int32 phone_number = 3;</code>
@@ -48,7 +55,8 @@ public final class PersonProto {
   /**
    * Protobuf type {@code sps.servlets.Person}
    */
-  public static final class Person extends com.google.protobuf.GeneratedMessageV3 implements
+  public  static final class Person extends
+      com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:sps.servlets.Person)
       PersonOrBuilder {
     // Use Person.newBuilder() to construct.
@@ -63,10 +71,12 @@ public final class PersonProto {
     }
 
     @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
       return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
     }
-    private Person(com.google.protobuf.CodedInputStream input,
+    private Person(
+        com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
@@ -98,6 +108,7 @@ public final class PersonProto {
               break;
             }
             case 24: {
+
               phoneNumber_ = input.readInt32();
               break;
             }
@@ -112,41 +123,43 @@ public final class PersonProto {
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
       } finally {
         makeExtensionsImmutable();
       }
     }
-    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
       return com.google.sps.servlets.PersonProto.internal_static_sps_servlets_Person_descriptor;
     }
 
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-    internalGetFieldAccessorTable() {
-      return com.google.sps.servlets.PersonProto
-          .internal_static_sps_servlets_Person_fieldAccessorTable.ensureFieldAccessorsInitialized(
-              com.google.sps.servlets.PersonProto.Person.class,
-              com.google.sps.servlets.PersonProto.Person.Builder.class);
+        internalGetFieldAccessorTable() {
+      return com.google.sps.servlets.PersonProto.internal_static_sps_servlets_Person_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.sps.servlets.PersonProto.Person.class, com.google.sps.servlets.PersonProto.Person.Builder.class);
     }
 
     /**
      * Protobuf enum {@code sps.servlets.Person.PersonType}
      */
-    public enum PersonType implements com
-    .google.protobuf.ProtocolMessageEnum {
+    public enum PersonType
+        implements com.google.protobuf.ProtocolMessageEnum {
       /**
        * <code>PERSON_TYPE_UNSPECIFIED = 0;</code>
        */
       PERSON_TYPE_UNSPECIFIED(0),
-          /**
-           * <code>CUSTOMER = 1;</code>
-           */
-          CUSTOMER(1),
-          /**
-           * <code>MERCHANT = 2;</code>
-           */
-          MERCHANT(2), UNRECOGNIZED(-1),
-          ;
+      /**
+       * <code>CUSTOMER = 1;</code>
+       */
+      CUSTOMER(1),
+      /**
+       * <code>MERCHANT = 2;</code>
+       */
+      MERCHANT(2),
+      UNRECOGNIZED(-1),
+      ;
 
       /**
        * <code>PERSON_TYPE_UNSPECIFIED = 0;</code>
@@ -160,6 +173,7 @@ public final class PersonProto {
        * <code>MERCHANT = 2;</code>
        */
       public static final int MERCHANT_VALUE = 2;
+
 
       public final int getNumber() {
         if (this == UNRECOGNIZED) {
@@ -179,42 +193,45 @@ public final class PersonProto {
 
       public static PersonType forNumber(int value) {
         switch (value) {
-          case 0:
-            return PERSON_TYPE_UNSPECIFIED;
-          case 1:
-            return CUSTOMER;
-          case 2:
-            return MERCHANT;
-          default:
-            return null;
+          case 0: return PERSON_TYPE_UNSPECIFIED;
+          case 1: return CUSTOMER;
+          case 2: return MERCHANT;
+          default: return null;
         }
       }
 
-      public static com.google.protobuf.Internal.EnumLiteMap<PersonType> internalGetValueMap() {
+      public static com.google.protobuf.Internal.EnumLiteMap<PersonType>
+          internalGetValueMap() {
         return internalValueMap;
       }
-      private static final com.google.protobuf.Internal.EnumLiteMap<PersonType> internalValueMap =
-          new com.google.protobuf.Internal.EnumLiteMap<PersonType>() {
-            public PersonType findValueByNumber(int number) {
-              return PersonType.forNumber(number);
-            }
-          };
+      private static final com.google.protobuf.Internal.EnumLiteMap<
+          PersonType> internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<PersonType>() {
+              public PersonType findValueByNumber(int number) {
+                return PersonType.forNumber(number);
+              }
+            };
 
-      public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      public final com.google.protobuf.Descriptors.EnumValueDescriptor
+          getValueDescriptor() {
         return getDescriptor().getValues().get(ordinal());
       }
-      public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      public final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptorForType() {
         return getDescriptor();
       }
-      public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      public static final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptor() {
         return com.google.sps.servlets.PersonProto.Person.getDescriptor().getEnumTypes().get(0);
       }
 
       private static final PersonType[] VALUES = values();
 
-      public static PersonType valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      public static PersonType valueOf(
+          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
         if (desc.getType() != getDescriptor()) {
-          throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+          throw new java.lang.IllegalArgumentException(
+            "EnumValueDescriptor is not for this type.");
         }
         if (desc.getIndex() == -1) {
           return UNRECOGNIZED;
@@ -241,7 +258,8 @@ public final class PersonProto {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         name_ = s;
         return s;
@@ -250,11 +268,13 @@ public final class PersonProto {
     /**
      * <code>optional string name = 1;</code>
      */
-    public com.google.protobuf.ByteString getNameBytes() {
+    public com.google.protobuf.ByteString
+        getNameBytes() {
       java.lang.Object ref = name_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b =
-            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
         name_ = b;
         return b;
       } else {
@@ -272,7 +292,8 @@ public final class PersonProto {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         email_ = s;
         return s;
@@ -281,11 +302,13 @@ public final class PersonProto {
     /**
      * <code>optional string email = 2;</code>
      */
-    public com.google.protobuf.ByteString getEmailBytes() {
+    public com.google.protobuf.ByteString
+        getEmailBytes() {
       java.lang.Object ref = email_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b =
-            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
         email_ = b;
         return b;
       } else {
@@ -314,25 +337,22 @@ public final class PersonProto {
      * <code>optional .sps.servlets.Person.PersonType person_type = 4;</code>
      */
     public com.google.sps.servlets.PersonProto.Person.PersonType getPersonType() {
-      com.google.sps.servlets.PersonProto.Person.PersonType result =
-          com.google.sps.servlets.PersonProto.Person.PersonType.valueOf(personType_);
-      return result == null ? com.google.sps.servlets.PersonProto.Person.PersonType.UNRECOGNIZED
-                            : result;
+      com.google.sps.servlets.PersonProto.Person.PersonType result = com.google.sps.servlets.PersonProto.Person.PersonType.valueOf(personType_);
+      return result == null ? com.google.sps.servlets.PersonProto.Person.PersonType.UNRECOGNIZED : result;
     }
 
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1)
-        return true;
-      if (isInitialized == 0)
-        return false;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
 
       memoizedIsInitialized = 1;
       return true;
     }
 
-    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
       if (!getNameBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
       }
@@ -342,17 +362,14 @@ public final class PersonProto {
       if (phoneNumber_ != 0) {
         output.writeInt32(3, phoneNumber_);
       }
-      if (personType_
-          != com.google.sps.servlets.PersonProto.Person.PersonType.PERSON_TYPE_UNSPECIFIED
-                 .getNumber()) {
+      if (personType_ != com.google.sps.servlets.PersonProto.Person.PersonType.PERSON_TYPE_UNSPECIFIED.getNumber()) {
         output.writeEnum(4, personType_);
       }
     }
 
     public int getSerializedSize() {
       int size = memoizedSize;
-      if (size != -1)
-        return size;
+      if (size != -1) return size;
 
       size = 0;
       if (!getNameBytes().isEmpty()) {
@@ -362,12 +379,12 @@ public final class PersonProto {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, email_);
       }
       if (phoneNumber_ != 0) {
-        size += com.google.protobuf.CodedOutputStream.computeInt32Size(3, phoneNumber_);
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(3, phoneNumber_);
       }
-      if (personType_
-          != com.google.sps.servlets.PersonProto.Person.PersonType.PERSON_TYPE_UNSPECIFIED
-                 .getNumber()) {
-        size += com.google.protobuf.CodedOutputStream.computeEnumSize(4, personType_);
+      if (personType_ != com.google.sps.servlets.PersonProto.Person.PersonType.PERSON_TYPE_UNSPECIFIED.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(4, personType_);
       }
       memoizedSize = size;
       return size;
@@ -377,18 +394,20 @@ public final class PersonProto {
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
-        return true;
+       return true;
       }
       if (!(obj instanceof com.google.sps.servlets.PersonProto.Person)) {
         return super.equals(obj);
       }
-      com.google.sps.servlets.PersonProto.Person other =
-          (com.google.sps.servlets.PersonProto.Person) obj;
+      com.google.sps.servlets.PersonProto.Person other = (com.google.sps.servlets.PersonProto.Person) obj;
 
       boolean result = true;
-      result = result && getName().equals(other.getName());
-      result = result && getEmail().equals(other.getEmail());
-      result = result && (getPhoneNumber() == other.getPhoneNumber());
+      result = result && getName()
+          .equals(other.getName());
+      result = result && getEmail()
+          .equals(other.getEmail());
+      result = result && (getPhoneNumber()
+          == other.getPhoneNumber());
       result = result && personType_ == other.personType_;
       return result;
     }
@@ -429,43 +448,50 @@ public final class PersonProto {
       return PARSER.parseFrom(data);
     }
     public static com.google.sps.servlets.PersonProto.Person parseFrom(
-        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
     public static com.google.sps.servlets.PersonProto.Person parseFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
-    }
-    public static com.google.sps.servlets.PersonProto.Person parseFrom(java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry) throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
-          PARSER, input, extensionRegistry);
-    }
-    public static com.google.sps.servlets.PersonProto.Person parseDelimitedFrom(
-        java.io.InputStream input) throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
-    }
-    public static com.google.sps.servlets.PersonProto.Person parseDelimitedFrom(
-        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
-          PARSER, input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
     }
     public static com.google.sps.servlets.PersonProto.Person parseFrom(
-        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.google.sps.servlets.PersonProto.Person parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.google.sps.servlets.PersonProto.Person parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.google.sps.servlets.PersonProto.Person parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
     }
     public static com.google.sps.servlets.PersonProto.Person parseFrom(
         com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry) throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
-          PARSER, input, extensionRegistry);
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
-    public Builder newBuilderForType() {
-      return newBuilder();
-    }
+    public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
@@ -473,7 +499,8 @@ public final class PersonProto {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
     }
 
     @java.lang.Override
@@ -485,20 +512,20 @@ public final class PersonProto {
     /**
      * Protobuf type {@code sps.servlets.Person}
      */
-    public static final class Builder
-        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-            // @@protoc_insertion_point(builder_implements:sps.servlets.Person)
-            com.google.sps.servlets.PersonProto.PersonOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:sps.servlets.Person)
+        com.google.sps.servlets.PersonProto.PersonOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
         return com.google.sps.servlets.PersonProto.internal_static_sps_servlets_Person_descriptor;
       }
 
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internalGetFieldAccessorTable() {
-        return com.google.sps.servlets.PersonProto
-            .internal_static_sps_servlets_Person_fieldAccessorTable.ensureFieldAccessorsInitialized(
-                com.google.sps.servlets.PersonProto.Person.class,
-                com.google.sps.servlets.PersonProto.Person.Builder.class);
+          internalGetFieldAccessorTable() {
+        return com.google.sps.servlets.PersonProto.internal_static_sps_servlets_Person_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.sps.servlets.PersonProto.Person.class, com.google.sps.servlets.PersonProto.Person.Builder.class);
       }
 
       // Construct using com.google.sps.servlets.PersonProto.Person.newBuilder()
@@ -506,12 +533,14 @@ public final class PersonProto {
         maybeForceBuilderInitialization();
       }
 
-      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
         maybeForceBuilderInitialization();
       }
       private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
         }
       }
       public Builder clear() {
@@ -527,7 +556,8 @@ public final class PersonProto {
         return this;
       }
 
-      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
         return com.google.sps.servlets.PersonProto.internal_static_sps_servlets_Person_descriptor;
       }
 
@@ -544,8 +574,7 @@ public final class PersonProto {
       }
 
       public com.google.sps.servlets.PersonProto.Person buildPartial() {
-        com.google.sps.servlets.PersonProto.Person result =
-            new com.google.sps.servlets.PersonProto.Person(this);
+        com.google.sps.servlets.PersonProto.Person result = new com.google.sps.servlets.PersonProto.Person(this);
         result.name_ = name_;
         result.email_ = email_;
         result.phoneNumber_ = phoneNumber_;
@@ -557,26 +586,32 @@ public final class PersonProto {
       public Builder clone() {
         return (Builder) super.clone();
       }
-      public Builder setField(com.google.protobuf.Descriptors.FieldDescriptor field, Object value) {
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          Object value) {
         return (Builder) super.setField(field, value);
       }
-      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
         return (Builder) super.clearField(field);
       }
-      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return (Builder) super.clearOneof(oneof);
       }
       public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field, int index, Object value) {
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
       public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field, Object value) {
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof com.google.sps.servlets.PersonProto.Person) {
-          return mergeFrom((com.google.sps.servlets.PersonProto.Person) other);
+          return mergeFrom((com.google.sps.servlets.PersonProto.Person)other);
         } else {
           super.mergeFrom(other);
           return this;
@@ -584,8 +619,7 @@ public final class PersonProto {
       }
 
       public Builder mergeFrom(com.google.sps.servlets.PersonProto.Person other) {
-        if (other == com.google.sps.servlets.PersonProto.Person.getDefaultInstance())
-          return this;
+        if (other == com.google.sps.servlets.PersonProto.Person.getDefaultInstance()) return this;
         if (!other.getName().isEmpty()) {
           name_ = other.name_;
           onChanged();
@@ -608,8 +642,10 @@ public final class PersonProto {
         return true;
       }
 
-      public Builder mergeFrom(com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry) throws java.io.IOException {
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
         com.google.sps.servlets.PersonProto.Person parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
@@ -631,7 +667,8 @@ public final class PersonProto {
       public java.lang.String getName() {
         java.lang.Object ref = name_;
         if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
           name_ = s;
           return s;
@@ -642,11 +679,13 @@ public final class PersonProto {
       /**
        * <code>optional string name = 1;</code>
        */
-      public com.google.protobuf.ByteString getNameBytes() {
+      public com.google.protobuf.ByteString
+          getNameBytes() {
         java.lang.Object ref = name_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b =
-              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
           name_ = b;
           return b;
         } else {
@@ -656,11 +695,12 @@ public final class PersonProto {
       /**
        * <code>optional string name = 1;</code>
        */
-      public Builder setName(java.lang.String value) {
+      public Builder setName(
+          java.lang.String value) {
         if (value == null) {
-          throw new NullPointerException();
-        }
-
+    throw new NullPointerException();
+  }
+  
         name_ = value;
         onChanged();
         return this;
@@ -669,6 +709,7 @@ public final class PersonProto {
        * <code>optional string name = 1;</code>
        */
       public Builder clearName() {
+        
         name_ = getDefaultInstance().getName();
         onChanged();
         return this;
@@ -676,12 +717,13 @@ public final class PersonProto {
       /**
        * <code>optional string name = 1;</code>
        */
-      public Builder setNameBytes(com.google.protobuf.ByteString value) {
+      public Builder setNameBytes(
+          com.google.protobuf.ByteString value) {
         if (value == null) {
-          throw new NullPointerException();
-        }
-        checkByteStringIsUtf8(value);
-
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
         name_ = value;
         onChanged();
         return this;
@@ -694,7 +736,8 @@ public final class PersonProto {
       public java.lang.String getEmail() {
         java.lang.Object ref = email_;
         if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
           email_ = s;
           return s;
@@ -705,11 +748,13 @@ public final class PersonProto {
       /**
        * <code>optional string email = 2;</code>
        */
-      public com.google.protobuf.ByteString getEmailBytes() {
+      public com.google.protobuf.ByteString
+          getEmailBytes() {
         java.lang.Object ref = email_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b =
-              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
           email_ = b;
           return b;
         } else {
@@ -719,11 +764,12 @@ public final class PersonProto {
       /**
        * <code>optional string email = 2;</code>
        */
-      public Builder setEmail(java.lang.String value) {
+      public Builder setEmail(
+          java.lang.String value) {
         if (value == null) {
-          throw new NullPointerException();
-        }
-
+    throw new NullPointerException();
+  }
+  
         email_ = value;
         onChanged();
         return this;
@@ -732,6 +778,7 @@ public final class PersonProto {
        * <code>optional string email = 2;</code>
        */
       public Builder clearEmail() {
+        
         email_ = getDefaultInstance().getEmail();
         onChanged();
         return this;
@@ -739,18 +786,19 @@ public final class PersonProto {
       /**
        * <code>optional string email = 2;</code>
        */
-      public Builder setEmailBytes(com.google.protobuf.ByteString value) {
+      public Builder setEmailBytes(
+          com.google.protobuf.ByteString value) {
         if (value == null) {
-          throw new NullPointerException();
-        }
-        checkByteStringIsUtf8(value);
-
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
         email_ = value;
         onChanged();
         return this;
       }
 
-      private int phoneNumber_;
+      private int phoneNumber_ ;
       /**
        * <code>optional int32 phone_number = 3;</code>
        */
@@ -761,6 +809,7 @@ public final class PersonProto {
        * <code>optional int32 phone_number = 3;</code>
        */
       public Builder setPhoneNumber(int value) {
+        
         phoneNumber_ = value;
         onChanged();
         return this;
@@ -769,6 +818,7 @@ public final class PersonProto {
        * <code>optional int32 phone_number = 3;</code>
        */
       public Builder clearPhoneNumber() {
+        
         phoneNumber_ = 0;
         onChanged();
         return this;
@@ -793,10 +843,8 @@ public final class PersonProto {
        * <code>optional .sps.servlets.Person.PersonType person_type = 4;</code>
        */
       public com.google.sps.servlets.PersonProto.Person.PersonType getPersonType() {
-        com.google.sps.servlets.PersonProto.Person.PersonType result =
-            com.google.sps.servlets.PersonProto.Person.PersonType.valueOf(personType_);
-        return result == null ? com.google.sps.servlets.PersonProto.Person.PersonType.UNRECOGNIZED
-                              : result;
+        com.google.sps.servlets.PersonProto.Person.PersonType result = com.google.sps.servlets.PersonProto.Person.PersonType.valueOf(personType_);
+        return result == null ? com.google.sps.servlets.PersonProto.Person.PersonType.UNRECOGNIZED : result;
       }
       /**
        * <code>optional .sps.servlets.Person.PersonType person_type = 4;</code>
@@ -805,7 +853,7 @@ public final class PersonProto {
         if (value == null) {
           throw new NullPointerException();
         }
-
+        
         personType_ = value.getNumber();
         onChanged();
         return this;
@@ -814,6 +862,7 @@ public final class PersonProto {
        * <code>optional .sps.servlets.Person.PersonType person_type = 4;</code>
        */
       public Builder clearPersonType() {
+        
         personType_ = 0;
         onChanged();
         return this;
@@ -828,6 +877,7 @@ public final class PersonProto {
         return this;
       }
 
+
       // @@protoc_insertion_point(builder_scope:sps.servlets.Person)
     }
 
@@ -841,14 +891,15 @@ public final class PersonProto {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<Person> PARSER =
-        new com.google.protobuf.AbstractParser<Person>() {
-          public Person parsePartialFrom(com.google.protobuf.CodedInputStream input,
-              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-              throws com.google.protobuf.InvalidProtocolBufferException {
-            return new Person(input, extensionRegistry);
-          }
-        };
+    private static final com.google.protobuf.Parser<Person>
+        PARSER = new com.google.protobuf.AbstractParser<Person>() {
+      public Person parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+          return new Person(input, extensionRegistry);
+      }
+    };
 
     public static com.google.protobuf.Parser<Person> parser() {
       return PARSER;
@@ -862,46 +913,49 @@ public final class PersonProto {
     public com.google.sps.servlets.PersonProto.Person getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
+
   }
 
-  private static final com.google.protobuf.Descriptors
-      .Descriptor internal_static_sps_servlets_Person_descriptor;
-  private static final com.google.protobuf.GeneratedMessageV3
-      .FieldAccessorTable internal_static_sps_servlets_Person_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_sps_servlets_Person_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_sps_servlets_Person_fieldAccessorTable;
 
-  public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
+  public static com.google.protobuf.Descriptors.FileDescriptor
+      getDescriptor() {
     return descriptor;
   }
-  private static com.google.protobuf.Descriptors.FileDescriptor descriptor;
+  private static  com.google.protobuf.Descriptors.FileDescriptor
+      descriptor;
   static {
     java.lang.String[] descriptorData = {
-        "\n\014person.proto\022\014sps.servlets\"\270\001\n\006Person\022"
-        + "\014\n\004name\030\001 \001(\t\022\r\n\005email\030\002 \001(\t\022\024\n\014phone_nu"
-        + "mber\030\003 \001(\005\0224\n\013person_type\030\004 \001(\0162\037.sps.se"
-        + "rvlets.Person.PersonType\"E\n\nPersonType\022\033"
-        + "\n\027PERSON_TYPE_UNSPECIFIED\020\000\022\014\n\010CUSTOMER\020"
-        + "\001\022\014\n\010MERCHANT\020\002B&\n\027com.google.sps.servle"
-        + "tsB\013PersonProtob\006proto3"};
+      "\n\014person.proto\022\014sps.servlets\"\270\001\n\006Person\022" +
+      "\014\n\004name\030\001 \001(\t\022\r\n\005email\030\002 \001(\t\022\024\n\014phone_nu" +
+      "mber\030\003 \001(\005\0224\n\013person_type\030\004 \001(\0162\037.sps.se" +
+      "rvlets.Person.PersonType\"E\n\nPersonType\022\033" +
+      "\n\027PERSON_TYPE_UNSPECIFIED\020\000\022\014\n\010CUSTOMER\020" +
+      "\001\022\014\n\010MERCHANT\020\002B&\n\027com.google.sps.servle" +
+      "tsB\013PersonProtob\006proto3"
+    };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
-        new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
+        new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
           public com.google.protobuf.ExtensionRegistry assignDescriptors(
               com.google.protobuf.Descriptors.FileDescriptor root) {
             descriptor = root;
             return null;
           }
         };
-    com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
-        descriptorData, new com.google.protobuf.Descriptors.FileDescriptor[] {}, assigner);
-    internal_static_sps_servlets_Person_descriptor = getDescriptor().getMessageTypes().get(0);
-    internal_static_sps_servlets_Person_fieldAccessorTable =
-        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-            internal_static_sps_servlets_Person_descriptor,
-            new java.lang.String[] {
-                "Name",
-                "Email",
-                "PhoneNumber",
-                "PersonType",
-            });
+    com.google.protobuf.Descriptors.FileDescriptor
+      .internalBuildGeneratedFileFrom(descriptorData,
+        new com.google.protobuf.Descriptors.FileDescriptor[] {
+        }, assigner);
+    internal_static_sps_servlets_Person_descriptor =
+      getDescriptor().getMessageTypes().get(0);
+    internal_static_sps_servlets_Person_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_sps_servlets_Person_descriptor,
+        new java.lang.String[] { "Name", "Email", "PhoneNumber", "PersonType", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)
